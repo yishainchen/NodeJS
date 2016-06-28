@@ -1,3 +1,4 @@
+
 var showPage = require("./showPage");
  
 function route(pathname) {
@@ -7,9 +8,10 @@ function route(pathname) {
   handle["/blog"] = showPage.blog;
  
   if (typeof handle[pathname] === 'function') {
-    handle[pathname]();
+    return handle[pathname]();
   } else {
     console.log("404 Not Found " + pathname);
+    return "404 Not Found.";
   }
 }
  
