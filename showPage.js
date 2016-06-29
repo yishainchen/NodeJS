@@ -1,11 +1,14 @@
-function home() {
+
+function home(res) {
   console.log("This is the home page.");
-  return "This is home page.";
+  res.writeHead(200, {"Content-Type": "text/plain"});
+  res.end("This is home page.");
 }
  
-function blog() {
+function blog(res) {
   console.log("This is the blog page.");
-  return "This is blog page.";
+  res.writeHead(200, {"Content-Type": "text/plain"});
+  res.end("This is blog page.");
 }
  
 exports.home = home;
