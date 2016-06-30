@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get('/userlist', function(req, res) {
     var db = req.db;
-    //錯在下面這行
+    
     var collection = db.get('usercollection');
     collection.find({},{},function(e,docs){
  
@@ -26,6 +26,11 @@ router.get('/userlist', function(req, res) {
       });
     });
 
+});
+
+//Routing for API
+router.get('/api', function(req, res) {
+  res.json({ message: 'This is our api!' });
 });
 
 /* GET home page. */
